@@ -1,0 +1,117 @@
+:root {
+  color-scheme: light;
+  color: #172b41;
+  background: #fff;
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --blue: #14649a;
+  --muted: #53677b;
+  --line: #dce7ef;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+
+a { color: var(--blue); }
+
+a:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 5px;
+}
+
+.book {
+  width: min(100% - 48px, 760px);
+  margin-inline: auto;
+  padding-block: clamp(28px, 6vh, 60px) 26px;
+}
+
+.book-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 24px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(25px, 5vw, 36px);
+  line-height: 1.15;
+  letter-spacing: -.055em;
+}
+
+.index, .page-count {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .12em;
+}
+
+.index {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.photo { margin: 0; }
+
+.photo img {
+  display: block;
+  width: min(100%, 460px, max(265px, 55vh));
+  height: auto;
+  margin: clamp(18px, 4vh, 36px) auto 14px;
+  border: 1px solid #eef2f6;
+}
+
+.photo figcaption {
+  text-align: center;
+}
+
+.photo figcaption h2 {
+  margin: 0;
+  font-size: 21px;
+  letter-spacing: -.04em;
+}
+
+.source {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  text-underline-offset: 3px;
+}
+
+.pager {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.pager a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.pager a:hover { text-decoration: underline; }
+
+.pager a:first-child { justify-self: start; }
+.pager a:last-child { justify-self: end; }
+
+.page-count {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .book { width: calc(100% - 36px); }
+  .photo img { margin-top: 18px; }
+}
